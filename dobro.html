@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dobro com Alerta</title>
+  <style>
+    body {
+      background-color: #faf3f5;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border: 2px solid #f8bbd0;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+      color: #ad1457;
+      font-size: 16px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      border: 1px solid #eea8c0;
+      border-radius: 8px;
+      width: 80px;
+      background-color: #fce4ec;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-left: 10px;
+      padding: 8px 14px;
+      background-color: #f16e9a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 12px;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #f16e9a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <label>Digite um valor:</label><br>
+    <input type="text" id="numero">
+    <button onclick="mostrarDobro()">Mostrar o dobro</button>
+  </div>
+
+  <script>
+    function mostrarDobro() {
+      const num = parseFloat(document.getElementById("numero").value);
+      if (!isNaN(num)) {
+        alert("O dobro é: " + (num * 2));
+      } else {
+        alert("Digite um número válido.");
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+

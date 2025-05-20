@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dobro no Campo</title>
+  <style>
+    body {
+      background-color: #faeffd; 
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border: 2px solid #e1bee7;
+      border-radius: 12px;
+      padding: 30px 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .linha {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #4f2668;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #b59ab9;
+      border-radius: 6px;
+      background-color: #f3e5f5;
+      box-sizing: border-box;
+    }
+
+    input[readonly] {
+      background-color: #ffe0b2; 
+      font-weight: bold;
+      color: #e65100;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #a980b1;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #a980b1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="linha">
+      <label>Digite um valor:</label>
+      <input type="text" id="valor">
+    </div>
+
+    <button onclick="calcularDobro()">Mostrar o dobro</button>
+
+    <div class="linha">
+      <label>Dobro do valor:</label>
+      <input type="text" id="resultado" readonly>
+    </div>
+  </div>
+
+  <script>
+    function calcularDobro() {
+      const valor = parseFloat(document.getElementById("valor").value);
+      if (!isNaN(valor)) {
+        document.getElementById("resultado").value = valor * 2;
+      } else {
+        alert("Digite um número válido.");
+      }
+    }
+  </script>
+
+</body>
+</html>
